@@ -76,12 +76,12 @@
                 }
 
                 textArea.value += newText;
+                numberInput.value = "";
 
                 // タイマーをセットして、10秒後に元の画像に戻す
                 clearTimeout(timerId); // 以前のタイマーをクリア
                 timerId = setTimeout(function () {
                     image.src = "./img/flick.png"; // 元の画像に戻す
-                    numberInput.value = "";
                 }, 1500); // 10秒後
             });
 
