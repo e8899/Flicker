@@ -24,8 +24,9 @@
                 <button id="submitButton" class="btn btn-primary" type="button">入力</button>
             </div>
         </div>
-        <div class="mb-3">
+        <div class="input-group mb-3">
             <textarea class="form-control fs-1" id="textArea" rows="1" cols="50" readonly></textarea>
+            <button id="delate" class="btn btn-secondary">削除</button>
         </div>
         <div class="row d-flex justify-content-center mb-3">
             <img id="image" src="./img/flick.png" style="max-width:500px;">
@@ -40,14 +41,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let timerId;
-            const button = document.getElementById("submitButton");
+            const submitbutton = document.getElementById("submitButton");
             const image = document.getElementById("image");
             const numberInput = document.getElementById("numberInput");
+            const delatebutton =document.getElementById("delate");
 
             // テキストエリア要素を取得
             const textArea = document.getElementById("textArea");
             // ボタンがクリックされたときの処理
-            button.addEventListener("click", function () {
+            submitbutton.addEventListener("click", function () {
                 // 入力フィールドの値を取得
                 const inputValue = document.getElementById("numberInput").value;
 
@@ -81,6 +83,10 @@
                     image.src = "./img/flick.png"; // 元の画像に戻す
                     numberInput.value = "";
                 }, 1500); // 10秒後
+            });
+
+            delatebutton.addEventListener("click", function(){
+                textArea.value = "";
             });
         });
     </script>
